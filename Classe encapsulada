@@ -1,0 +1,106 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Atividade_2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Cliente[] c1 = new Cliente[4];
+            c1[0] = new Cliente();
+            c1[1] = new Cliente();
+            c1[2] = new Cliente();
+            c1[3] = new Cliente();
+
+            c1[0].setnome("Rafael");
+            c1[0].setmatricula(0000);
+            c1[0].setsalario(7900);
+
+            c1[1].setnome("Diego");
+            c1[1].setmatricula(0001);
+            c1[1].setsalario(7800);
+
+
+            c1[2].setnome("Fabio");
+            c1[2].setmatricula(0002);
+            c1[2].setsalario(7700);
+            
+            c1[3].setnome("Guigs");
+            c1[3].setmatricula(0003);
+            c1[3].setsalario(7600);
+
+            double media = c1[0].media(c1[1], c1[2], c1[3]);
+
+            if (c1[0].getsalario() > media)
+            {
+                Console.WriteLine(c1[0].getnome() + " " + c1[0].getmatricula() + " " + c1[0].getsalario());
+            }
+            if (c1[1].getsalario() > media)
+            {
+                Console.WriteLine(c1[1].getnome() + " " + c1[1].getmatricula() + " " + c1[1].getsalario());
+            }
+            if (c1[2].getsalario() > media)
+            {
+                Console.WriteLine(c1[2].getnome() + " " + c1[2].getmatricula() + " " + c1[2].getsalario());
+            }
+            if (c1[3].getsalario() > media)
+            {
+                Console.WriteLine(c1[3].getnome() + " " + c1[3].getmatricula() + " " + c1[3].getsalario());
+            }
+
+            Console.ReadKey();
+        }
+
+    }
+
+
+class Cliente { 
+ 
+        private string nome;
+        private int matricula;
+        private double salario;
+
+        public string getnome()
+        {
+            return this.nome;
+        }
+
+        public int getmatricula ()
+        {
+            return this.matricula;
+        }
+
+        public double getsalario ()
+        {
+            return this.salario;
+        }
+
+        public void setnome (string nome)
+        {
+            this.nome = nome;
+        }
+
+        public void setmatricula (int matricula)
+        {
+            this.matricula = matricula;
+        }
+
+        public void setsalario (double salario)
+        {
+            this.salario = salario;
+        }
+
+        public double media (Cliente c1, Cliente c2, Cliente c3)
+        {
+            return (this.salario + c1.salario + c2.salario + c3.salario) / 4;
+        }
+    }
+
+}
+
+
+
